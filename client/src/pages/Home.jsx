@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import ProductCard from "../components/ProductCard";
 import { useState } from "react";
 
-export const link = "http://localhost:3000";
+export const link = "https://commerce-task-omega.vercel.app";
 function Home() {
   const [products, setProducts] = useState([]);
   useEffect(() => {

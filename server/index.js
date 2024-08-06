@@ -8,8 +8,13 @@ const app = express();
 app.listen(3000, (req, res, next) => {
   console.log("server is running");
 });
+var corsOptions = {
+  origin: "https://commerce-task-omega.vercel.app/",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  Credentials: true,
+};
 app.use(cors());
-app.use(express.json());
+app.use(express.json(corsOptions));
 app.use("/api/auth", authRouter);
 app.use("/api/list", listingRouter);
 mongoose
