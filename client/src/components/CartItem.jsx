@@ -25,9 +25,7 @@ function CartItem({ item }) {
       <div className="flex md:flex-row  flex-col md:ps-0 ps-4  justify-between  lg:w-3/5 md:w-full md:pe-5 lg:border-0 lg:py-0  py-4">
         <span className="md:hidden block">
           <div className="space-x-2 my-2 text-[#00000080]">
-            <button className="text-lg ">
-              <FiEdit />
-            </button>
+           
             <button
               className="text-lg "
               onClick={() => dispatch(deleteItem(item._id))}
