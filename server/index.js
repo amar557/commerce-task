@@ -9,7 +9,7 @@ app.listen(3000, (req, res, next) => {
   console.log("server is running");
 });
 var corsOptions = {
-  origin: "https://commerce-task-omega.vercel.app/",
+  origin: "http://localhost:5173",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   Credentials: true,
 };
