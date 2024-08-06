@@ -9,7 +9,7 @@ app.listen(3000, (req, res, next) => {
   console.log("server is running");
 });
 var corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://commerce-task-client.vercel.app/",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   Credentials: true,
 };
