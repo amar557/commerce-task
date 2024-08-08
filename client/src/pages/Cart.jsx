@@ -7,7 +7,6 @@ function Cart() {
     (items) => items.cartSlice
   );
   const data = ["price", "quantity", "total"];
-  console.log(cartItems);
   const navigate = useNavigate();
   return (
     <div className="w-4/5 mx-auto my-10">
@@ -40,8 +39,8 @@ function Cart() {
           </div>
         </>
       ) : (
-        <div className="flex items-center gap-10 justify-center  flex-col">
-          <h1 className="text-4xl font-medium capitalize">
+        <div className="flex items-center gap-10 justify-center  flex-col min-h-[50vh]">
+          <h1 className="text-4xl font-medium capitalize text-center">
             your cart is empty{" "}
           </h1>
           <button

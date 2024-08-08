@@ -53,6 +53,7 @@ export const cartSlice = createSlice({
     },
     emptyCart: (state) => {
       state.items = [];
+      cartSlice.caseReducers.subTotal(state);
     },
   },
   extraReducers: () => {},
