@@ -7,6 +7,7 @@ import { link } from "./Home";
 import { RiEqualizerLine } from "react-icons/ri";
 function Shop() {
   const [open, setOpen] = useState("");
+  const [loading, setLoading] = useState(false);
   const [filter, setFilter] = useState(false);
   const toggleMenu = (menuId) => {
     setOpen(open === menuId ? null : menuId);
@@ -17,12 +18,14 @@ function Shop() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     async function getProducts() {
+      setLoading(true);
       const products = await fetch(`${link}/api/list/get/products`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
       const items = await products.json();
       setProducts(items);
+      setLoading(false);
     }
     getProducts();
   }, []);
@@ -80,11 +83,52 @@ function Shop() {
             ))}
           </ul>
         </div>
-        <div className="xmd:w-4/5 w-full grid grid-cols-2 lg:grid-cols-4 gap-10 sm:grid-cols-3">
-          {products.map((product) => (
-            <SResultCard product={product} />
-          ))}
-        </div>
+        {loading ? (
+          <div class="max-w-screen-lg me-auto catalog-product grid grid-cols-1 lg:grid-cols-3  sm:grid-cols-2 gap-8 py-8 xmd:w-4/5 w-full">
+            <div class="border border-gray-200 p-4">
+              <div class="animate-pulse space-y-2">
+                <div class="bg-gray-200 h-48"></div>
+                <div class="flex-1 space-y-2">
+                  <div class="h-16 bg-gray-200 full"></div>
+                  <div class="space-x-2 flex">
+                    <div class="h-8 bg-gray-200 w-full"></div>
+                    <div class="h-8 bg-gray-200 w-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border border-gray-200 p-4">
+              <div class="animate-pulse space-y-2">
+                <div class="bg-gray-200 h-48"></div>
+                <div class="flex-1 space-y-2">
+                  <div class="h-16 bg-gray-200 full"></div>
+                  <div class="space-x-2 flex">
+                    <div class="h-8 bg-gray-200 w-full"></div>
+                    <div class="h-8 bg-gray-200 w-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border border-gray-200 p-4">
+              <div class="animate-pulse space-y-2">
+                <div class="bg-gray-200 h-48"></div>
+                <div class="flex-1 space-y-2">
+                  <div class="h-16 bg-gray-200 full"></div>
+                  <div class="space-x-2 flex">
+                    <div class="h-8 bg-gray-200 w-full"></div>
+                    <div class="h-8 bg-gray-200 w-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="xmd:w-4/5 w-full grid grid-cols-2 lg:grid-cols-4 gap-10 sm:grid-cols-3">
+            {products.map((product) => (
+              <SResultCard product={product} />
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

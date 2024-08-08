@@ -20,7 +20,7 @@ function Card({ product }) {
           alt=""
           className="h-full duration-500 absolute top-0 left-0  transition-all  scale-100  w-full object-cover opacity-0 img2"
         />
-        <button className="backdrop-blur-3xl  text-white absolute bottom-0 left-0 w-full btn transition-all duration-300 translate-y-full uppercase  md:py-2 py-1 text-sm bg-[#c2c2c2d4] drop-shadow-sm">
+        <button className="backdrop-blur-3xl  text-white absolute bottom-0 left-0 w-full btn transition-all duration-300 translate-y-full uppercase  md:py-2 py-1 text-xs sm:text-sm bg-[#c2c2c2d4] drop-shadow-sm">
           quick view
         </button>
         <div className="bg-red-600 text-white px-1 py-1 absolute top-2 left-2 text-sm ">
