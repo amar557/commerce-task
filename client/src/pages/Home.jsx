@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import { useState } from "react";
 import Card from "../components/Card";
 import React from "react";
@@ -9,6 +10,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import PrevButton from "../components/PrevButton";
 import NexButton from "../components/NexButton";
+
 export const link = "https://commerce-task-omega.vercel.app";
 function Home() {
   const [products, setProducts] = useState([]);

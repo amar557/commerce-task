@@ -99,10 +99,14 @@ function Navbar({ logOutUser, user }) {
           <RxHamburgerMenu onClick={toggleSideBar} />
           <IoIosSearch />
         </div>
-        <img src={logo} alt="" className="h-10 w-auto" />
+        <NavLink to={"/"}>
+          <img src={logo} alt="" className="h-10 w-auto" />
+        </NavLink>
         <div className="text-lg flex items-center gap-3">
           <CiHeart />
-          <IoBagHandleSharp />
+          <NavLink to={"/cart"}>
+            <IoBagHandleSharp />
+          </NavLink>
         </div>
       </ul>
       <div
